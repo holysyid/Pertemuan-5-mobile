@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Succu-Wiki</string>
+    <string name="succulent_name">Succulent Name</string>
+    <string name="succulent_subname"> </string>
+    <string name="list">List View</string>
+    <string name="grid">Grid View</string>
+    <string name="about">About Me</string>
+    <string name="content_text">This is the value of the text</string>
+    <string name="specification">Detailed Information</string>
+    <string name="sun">sun</string>
+    <string name="sun_val">value sun</string>
+    <string name="water_val">value</string>
+    <string name="water">water</string>
+    <string name="grow">grow scale</string>
+    <string name="grow_val">value</string>
+    <string name="temp">temperature</string>
+    <string name="temp_val">value</string>
+    <string name="prop">propagiation</string>
+    <string name="prop_val">value</string>
+    <string name="toxic">toxic</string>
+    <string name="toxic_val">value</string>
+    <string name="dormant">dormant</string>
+    <string name="dormant_val">value</string>
+    <string name="buy">Buy Now</string>
+    <string name="aboutme">A design enthusiast student with Computer Science Degree at Universitas Sumatera Utara.  Very passionate with how the design, interface and how user experience works to solve problems.</string>
+    <string name="MyName">Rasyid Hafiz</string>
+    <string name="me">About</string>
+    <string name="datasource">these data taken from https://www.succulentsandsunshine.com/</string>
+    <string name="email">holysyid@gmail.com</string>
+    <string name="studentid">A3192866</string>
+
+</resources>
