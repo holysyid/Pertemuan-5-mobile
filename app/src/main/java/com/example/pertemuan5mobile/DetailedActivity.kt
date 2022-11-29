@@ -25,10 +25,24 @@ class DetailedActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var tox_asp: TextView
     private lateinit var dor_asp: TextView
 
+    private lateinit var x: String
+
 
 
     companion object {
-
+        //we use this only for non parcelable
+        const val DATA_PICT = "data_foto"
+        const val POSITION_INDEX = ""
+        const val DATA_NAME = "NAME"
+        const val DATA_COMMNAME = "COMMNAME"
+        const val DATA_DETAIL = "DETAIL"
+        const val DATA_SUN = "SUN"
+        const val DATA_GROW = "GROW"
+        const val DATA_WATER = "WATER"
+        const val DATA_TEMP = "TEMP"
+        const val DATA_PROP ="PROP"
+        const val DATA_TOX ="TOX"
+        const val DATA_DOR="DOR"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +64,7 @@ class DetailedActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(backIntent)
             }
             R.id.buy->{
-                //val halo = intent.getStringExtra(DATA_NAME)
-                //Toast.makeText(this, "$halo Will Be Coming Soon", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "$x Will Be Coming Soon", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -69,20 +82,44 @@ class DetailedActivity : AppCompatActivity(), View.OnClickListener {
         tox_asp = findViewById(R.id.toxval)
         dor_asp = findViewById(R.id.dorval)
 
-        //val dataImage = intent.getIntExtra(DATA_PICT, 0)
         val item : Succulent? = intent.getParcelableExtra("items")
-        currentImage = findViewById(R.id.image_placeholder)
-        currentImage.setImageResource(item!!.picture)
-        succulentName.text=item.name
-        commonName.text=item.common_name
-        succulentDetail.text=item.detail
-        sun_asp.text=item.sun
-        grow_asp.text=item.grow
-        water_asp.text=item.water
-        temp_asp.text=item.temp
-        prop_asp.text=item.propagation
-        tox_asp.text=item.toxic
-        dor_asp.text=item.dormant
+        if (item==null){
+            // without parcelable
+          Toast.makeText(this, "this is without parcelable", Toast.LENGTH_SHORT).show()
+
+          val dataImage = intent.getIntExtra(DATA_PICT, 0)
+          currentImage = findViewById(R.id.image_placeholder)
+          currentImage.setImageResource(dataImage)
+          succulentName.text=intent.getStringExtra(DATA_NAME)
+          commonName.text=intent.getStringExtra(DATA_COMMNAME)
+          succulentDetail.text=intent.getStringExtra(DATA_DETAIL)
+          sun_asp.text=intent.getStringExtra(DATA_SUN)
+          grow_asp.text=intent.getStringExtra(DATA_GROW)
+          water_asp.text=intent.getStringExtra(DATA_WATER)
+          temp_asp.text=intent.getStringExtra(DATA_TEMP)
+          prop_asp.text=intent.getStringExtra(DATA_PROP)
+          tox_asp.text=intent.getStringExtra(DATA_TOX)
+          dor_asp.text=intent.getStringExtra(DATA_DOR)
+            x = intent.getStringExtra(DATA_NAME).toString()
+
+        } else{
+            //with parcelable
+            Toast.makeText(this, "this is with parcelable", Toast.LENGTH_SHORT).show()
+
+            currentImage = findViewById(R.id.image_placeholder)
+            currentImage.setImageResource(item!!.picture)
+            succulentName.text=item.name
+            x =item.name
+            commonName.text=item.common_name
+            succulentDetail.text=item.detail
+            sun_asp.text=item.sun
+            grow_asp.text=item.grow
+            water_asp.text=item.water
+            temp_asp.text=item.temp
+            prop_asp.text=item.propagation
+            tox_asp.text=item.toxic
+            dor_asp.text=item.dormant
+        }
     }
 
 

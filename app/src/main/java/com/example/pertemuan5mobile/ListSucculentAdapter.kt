@@ -54,6 +54,7 @@ class ListSucculentAdapter(private val listSucculent: ArrayList<Succulent>) : //
         holder.clickSeeDetail.setOnClickListener {
             val context= holder.clickSeeDetail.context
             val SucculentDetailActivity = Intent(context, DetailedActivity::class.java)
+            //assigning data with parcelable to detail activity
             SucculentDetailActivity.putExtra("items",succulent)
             context.startActivity(SucculentDetailActivity)
         }
