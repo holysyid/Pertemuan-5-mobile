@@ -180,6 +180,7 @@ object SucculentData {
         "Summer Dormant"
 
     )
+    //making immutable arraylist that returns information from the object, which later can be replaced with API fetch or something"
     val listData: ArrayList<Succulent>
         get() {
             val list = arrayListOf<Succulent>()
