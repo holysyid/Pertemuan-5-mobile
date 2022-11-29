@@ -1,9 +1,11 @@
 package com.example.pertemuan5mobile
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -20,6 +22,8 @@ class ListSucculentAdapter(private val listSucculent: ArrayList<Succulent>) : //
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvDetail: TextView = itemView.findViewById(R.id.tv_item_subname)
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
+        //declaring holder for click
+        var clickSeeDetail: LinearLayout = itemView.findViewById(R.id.clickToDetail)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -46,6 +50,13 @@ class ListSucculentAdapter(private val listSucculent: ArrayList<Succulent>) : //
 
         holder.tvName.text = succulent.name
         holder.tvDetail.text = succulent.common_name
+
+        holder.clickSeeDetail.setOnClickListener {
+            val context= holder.clickSeeDetail.context
+            val SucculentDetailActivity = Intent(context, DetailedActivity::class.java)
+            SucculentDetailActivity.putExtra("items",succulent)
+            context.startActivity(SucculentDetailActivity)
+        }
     }
 
 }

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <tools:ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/AppTheme.NotTransparent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_detailed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".DetailedActivity">
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/image_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/aloe_doran_black" />
+        <TextView
+            android:id="@+id/backToMain"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:drawableStart="@drawable/back_btn"
+            android:backgroundTint="@color/succulentPrimary"
+            />
+
+    </FrameLayout>
+
+    <TextView
+
+        android:id="@+id/sucname"
+        style="@style/TextContent.SucculentFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="@string/succulent_name"
+        android:textStyle="bold"
+        android:textSize="28sp" />
+    <TextView
+
+        android:id="@+id/comname"
+        style="@style/TextContent.SucculentFont.Light"
+        android:text="@string/succulent_subname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/detailed"
+        style="@style/TextContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:lineSpacingMultiplier="1"
+        android:text="@string/content_text"
+        />
+
+    <TextView
+        style="@style/TextContent.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/specification" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <TableRow
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:gravity="center"
+                android:drawableRight="@drawable/sun"
+                style="@style/TextSpec.Field"
+                 />
+
+            <TextView
+                android:id="@+id/sunval"
+                style="@style/TextSpec.Value"
+                android:text="@string/sun_val" />
+        </TableRow>
+
+        <TableRow
+
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                style="@style/TextSpec.Field"
+                android:gravity="center"
+                android:drawableRight="@drawable/ruler" />
+            <TextView
+                android:id="@+id/growval"
+                style="@style/TextSpec.Value"
+                android:text="@string/grow_val" />
+        </TableRow>
+        <TableRow
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            style="@style/TextSpec.Field"
+            android:gravity="center"
+            android:drawableRight="@drawable/water" />
+
+        <TextView
+            android:id="@+id/waterval"
+            style="@style/TextSpec.Value"
+            android:text="@string/water_val" />
+    </TableRow>
+        <TableRow
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                style="@style/TextSpec.Field"
+                android:gravity="center"
+                android:drawableRight="@drawable/temp" />
+
+            <TextView
+                android:id="@+id/tempval"
+                style="@style/TextSpec.Value"
+                android:text="@string/temp_val" />
+        </TableRow>
+        <TableRow
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                style="@style/TextSpec.Field"
+                android:gravity="center"
+                android:drawableRight="@drawable/pagelines" />
+
+            <TextView
+                android:id="@+id/propval"
+                style="@style/TextSpec.Value"
+                android:text="@string/prop_val" />
+        </TableRow>
+        <TableRow
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                style="@style/TextSpec.Field"
+                android:gravity="center"
+                android:drawableRight="@drawable/skull" />
+
+            <TextView
+                android:id="@+id/toxval"
+                style="@style/TextSpec.Value"
+                android:text="@string/toxic_val" />
+        </TableRow>
+        <TableRow
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                style="@style/TextSpec.Field"
+                android:gravity="center"
+                android:drawableRight="@drawable/leaf" />
+
+            <TextView
+                android:id="@+id/dorval"
+                style="@style/TextSpec.Value"
+                android:text="@string/dormant_val" />
+        </TableRow>
+    </TableLayout>
+
+
+
+    <Button
+        android:id="@+id/buy"
+        android:drawableStart="@drawable/back_btn"
+        android:background="@color/succulentPrimaryDark"
+        android:padding="12dp"
+        style="@style/ButtonGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buy" />
+</LinearLayout>
+</tools:ScrollView>
